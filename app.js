@@ -49,13 +49,13 @@ const getIngredientList = (ingredient) => {
   <img class="ingredient-img" src="${ingredient.strMealThumb}">
   <h3><img class="icon" src="./images/icon.png">${ingredient.strIngredient1}</h3>
   <h3><img class="icon" src="./images/icon.png">${ingredient.strIngredient2}</h3>
-  <h3><img class="icon" src="./images/icon.png">${ingredient.strIngredient3}</h3>
-  <h3><img class="icon" src="./images/icon.png">${ingredient.strIngredient4}</h3>
-  <h3><img class="icon" src="./images/icon.png">${ingredient.strIngredient5}</h3>
-  <h3><img class="icon" src="./images/icon.png">${ingredient.strIngredient6}</h3>
-  <h3><img class="icon" src="./images/icon.png">${ingredient.strIngredient7}</h3>
-  <h3><img class="icon" src="./images/icon.png">${ingredient.strIngredient8}</h3>
-  <h3><img class="icon" src="./images/icon.png">${ingredient.strIngredient9}</h3>
-  <h3><img class="icon" src="./images/icon.png">${ingredient.strIngredient10}</h3>
+  <h3><img class="icon" src="/images/icon.png">${ingredient.strIngredient3}</h3>
+  <h3><img class="icon" src="/images/icon.png">${ingredient.strIngredient4}</h3>
+  <h3><img class="icon" src="/images/icon.png">${ingredient.strIngredient5}</h3>
+  <h3><img class="icon" src="/images/icon.png">${ingredient.strIngredient6}</h3>
+  <h3><img class="icon" src="/images/icon.png">${ingredient.strIngredient7}</h3>
+  <h3><img class="icon" src="/images/icon.png">${ingredient.strIngredient8}</h3>
+  <h3><img class="icon" src="/images/icon.png">${ingredient.strIngredient9}</h3>
+  <h3><img class="icon" src="/images/icon.png">${ingredient.strIngredient10}</h3>
   `;
 };
