@@ -29,3 +29,12 @@ body {
   margin: 10px 0;
   font-size: 15px;
 }
+#ingredient-list {
+  width: 400px;
+  position: absolute;
+  top: 0;
+  background-color: aliceblue;
+}
+#ingredient-list img {
+  width: 100%;
+}
