@@ -1,15 +1,24 @@
+// get data from API
 const getMeal = (food) => {
   const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${food}`;
   fetch(url)
     .then((res) => res.json())
-    .then((data) => getMealLists(data.meals));
+    .then((data) => {
+      if (data.meals) {
+        getMealLists(data.meals);
+      } else {
+        const errorMsg = "sorry!! didn't match any food";
+        document.getElementById("error-message").innerText = errorMsg;
+      }
+    });
 };
 
+// input button
 const getFoodInfo = () => {
   const foodName = document.getElementById("food-input").value;
   getMeal(foodName);
 };
-
+// input search items function
 const getMealLists = (foodKeywords) => {
   const mealArea = document.getElementById("food-area");
   foodKeywords.forEach((meal) => {
@@ -22,15 +31,18 @@ const getMealLists = (foodKeywords) => {
     foodDiv.innerHTML = foodData;
     mealArea.appendChild(foodDiv);
   });
-
   document.getElementById("food-input").value = "";
 };
+
+// API call for ingredients
 const getBtn = (food) => {
   const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${food}`;
   fetch(url)
     .then((res) => res.json())
     .then((data) => getIngredientList(data.meals[0]));
 };
+
+// detail ingredient function
 const getIngredientList = (ingredient) => {
   const listDiv = document.getElementById("ingredient-list");
   listDiv.innerHTML = `
