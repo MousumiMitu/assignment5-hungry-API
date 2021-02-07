@@ -30,11 +30,30 @@ body {
   font-size: 15px;
 }
 #ingredient-list {
-  width: 400px;
-  position: absolute;
-  top: 0;
-  background-color: aliceblue;
-}
-#ingredient-list img {
   width: 100%;
+  position: relative;
+  top: 0;
+  display: inline-block;
+  padding: 0 400px;
+}
+.ingredient-img {
+  width: 350px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+#ingredient-list h3 {
+  font-size: 1rem;
+}
+#ingredient-list h3 .icon {
+  width: 12px;
+  margin-right: 10px;
+}
+.link-color {
+  color: black;
+  font-weight: 800px;
+}
+.btn-color {
+  background-color: #f06c4e;
+  color: #fff;
+  border: none;
 }
