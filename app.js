@@ -47,7 +47,7 @@ const getIngredientList = (ingredient) => {
   const listDiv = document.getElementById("ingredient-list");
   listDiv.innerHTML = `
   <img class="ingredient-img" src="${ingredient.strMealThumb}">
-  <h3><img class="icon" src="/images/icon.png">${ingredient.strIngredient1}</h3>
+  <h3><img class="icon" src="./images/icon.png">${ingredient.strIngredient1}</h3>
   <h3><img class="icon" src="/images/icon.png">${ingredient.strIngredient2}</h3>
   <h3><img class="icon" src="/images/icon.png">${ingredient.strIngredient3}</h3>
   <h3><img class="icon" src="/images/icon.png">${ingredient.strIngredient4}</h3>
