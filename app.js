@@ -3,16 +3,9 @@ const getMeal = (food) => {
   const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${food}`;
   fetch(url)
     .then((res) => res.json())
-    .then((data) => {
-      if (data.meals) {
-        getMealLists(data.meals);
-      } else {
-        const errorMsg = "sorry!! didn't match any food";
-        document.getElementById("error-message").innerText = errorMsg;
-      }
-    });
+    .then((data) => getMealLists(data.meals))
+    .catch((error) => errorMsg("sorry!! didn't match any food"));
 };
-
 // input button
 const getFoodInfo = () => {
   const foodName = document.getElementById("food-input").value;
@@ -20,18 +13,23 @@ const getFoodInfo = () => {
 };
 // input search items function
 const getMealLists = (foodKeywords) => {
+  const errorInput = document.getElementById("error-message");
+  errorInput.innerText = "";
   const mealArea = document.getElementById("food-area");
+  mealArea.innerHTML = "";
   foodKeywords.forEach((meal) => {
     const foodDiv = document.createElement("div");
     foodDiv.className = "meal-container";
     const foodData = `
-        <img onclick="getBtn('${meal.strMeal}')" src="${meal.strMealThumb}">
-        <h4 onclick="getBtn('${meal.strMeal}')"> ${meal.strMeal}</h4>
+        <div onclick="getBtn('${meal.strMeal}')">
+        <img  src="${meal.strMealThumb}">
+        <h4> ${meal.strMeal}</h4>
+        </div>
     `;
     foodDiv.innerHTML = foodData;
     mealArea.appendChild(foodDiv);
+    document.getElementById("food-input").value = "";
   });
-  document.getElementById("food-input").value = "";
 };
 
 // API call for ingredients
@@ -58,4 +56,9 @@ const getIngredientList = (ingredient) => {
   <h3><img class="icon" src="./images/icon.png">${ingredient.strIngredient9}</h3>
   <h3><img class="icon" src="./images/icon.png">${ingredient.strIngredient10}</h3>
   `;
+};
+
+const errorMsg = (error) => {
+  const errorInput = document.getElementById("error-message");
+  errorInput.innerText = error;
 };
